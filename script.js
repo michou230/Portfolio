@@ -3,6 +3,22 @@ const navLinks = document.querySelectorAll('.nav-links a');
 const revealItems = document.querySelectorAll('.reveal');
 const contactButton = document.querySelector('#contactButton');
 
+function markActivePage() {
+  const links = document.querySelectorAll('.nav-links a');
+  const path = window.location.pathname.split('/').pop() || 'index.html';
+  links.forEach((link) => {
+    const href = link.getAttribute('href');
+    if (!href) return;
+    if (href.startsWith('#')) {
+      // single-page anchor on index
+      link.classList.toggle('active', window.location.hash === href || (path === 'index.html' && href === '#home'));
+    } else {
+      const file = href.split('/').pop();
+      link.classList.toggle('active', file === path || (path === '' && file === 'index.html'));
+    }
+  });
+}
+
 function handleScrollSpy() {
   const scrollPosition = window.scrollY + window.innerHeight / 2;
 
@@ -119,4 +135,5 @@ window.addEventListener('load', () => {
   setupMobileToggle();
   startTypingEffect();
   initContactButton();
+  markActivePage();
 });
