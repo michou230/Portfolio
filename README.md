@@ -1,2 +1,3 @@
 # Portfolio
-Greetings dear reader,
+Greetings,
+This is Abdennouri Mouatez Billah
