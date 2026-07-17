@@ -69,8 +69,9 @@ function setupMobileToggle() {
 function startTypingEffect() {
   const lines = [
     'Computer Science',
-    'Game Development',
-    'AI-assisted programming',
+    'Game Dev',
+    'Coding & programming',
+    'Technology'
   ];
   let lineIndex = 0;
   let charIndex = 0;
@@ -114,7 +115,7 @@ function initContactButton() {
   contactButton?.addEventListener('click', () => {
     const message = document.createElement('div');
     message.className = 'pulse-notification';
-    message.textContent = 'Signal sent. Awaiting response...';
+    message.textContent = 'Coming soon...';
     document.body.appendChild(message);
 
     setTimeout(() => {
