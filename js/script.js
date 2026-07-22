@@ -129,11 +129,64 @@ function initContactButton() {
   });
 }
 
+function setActivenav() {
+  let currentPath = window.location.pathname;
+
+  let currentPage = currentPath.split("/").pop().split("#")[0].split("?")[0];
+  if (currentPage === "" || currentPage === "/") {
+    currentPage = "index.html";
+  }
+
+  const links = document.querySelectorAll(".nav-links a");
+  
+  links.forEach(link => {
+    const rawHref = link.getAttribute("href");
+    if (!rawHref) return;
+
+    const cleanHref = rawHref.split("/").pop().split("#")[0].split("?")[0];
+
+    link.classList.remove("active");
+
+    if (cleanHref === currentPage) {
+      link.classList.add("active");
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  //loads header
+  if (document.getElementById("header-placeholder")) {
+    loadHeader();
+  }
+
+  //loads footer
+  if (document.getElementById("footer-placeholder")) {
+    loadFooter();
+  }
+});
+
+function loadFooter(){
+  fetch("/footer.html").then(response => response.text()).then(data => {const footerrContainer = document.getElementById("footer-placeholder").innerHTML = data;
+  })
+  .catch(error => console.error("Error loading footer:", error));
+}
+
+function loadHeader(){
+  fetch("/header.html").then(response => response.text()).then(data => {const headerContainer = document.getElementById("header-placeholder")
+    if(headerContainer){
+      headerContainer.innerHTML = data;
+      setActivenav();
+      setupMobileToggle();
+      headerContainer.style.opacity = "1";
+    }    
+  })
+  .catch(error => console.error("Error loading header:", error));
+}
+
 window.addEventListener('scroll', handleScrollSpy);
 window.addEventListener('load', () => {
   handleScrollSpy();
   createRevealObserver();
-  setupMobileToggle();
   startTypingEffect();
   initContactButton();
   markActivePage();
