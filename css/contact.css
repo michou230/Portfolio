@@ -1,0 +1,65 @@
+.contact-card {
+  position: relative;
+  overflow: hidden;
+  padding: 1.6rem;
+  border-radius: 26px;
+  background: rgba(10, 18, 42, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.18);
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(80, 197, 255, 0.28);
+  box-shadow: 0 40px 90px rgba(80, 197, 255, 0.12);
+}
+
+.contact-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at top right, rgba(80, 197, 255, 0.1), transparent 32%);
+}
+
+.contact-card {
+  font-family: var(--text-font);
+}
+
+.contact-card p {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+
+.contact-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: minmax(100px, 1fr) minmax(100px, 260px);
+}
+
+.contact-card {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-item {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.contact-item span {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.contact-item strong {
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.contact-button {
+  width: fit-content;
+}

@@ -1,0 +1,67 @@
+
+.project-grid{
+  display: grid;
+  gap: 1.2rem;
+}
+
+.project-card{
+  position: relative;
+  overflow: hidden;
+  padding: 1.6rem;
+  border-radius: 26px;
+  background: rgba(10, 18, 42, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.18);
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.project-card:hover{
+  transform: translateY(-4px);
+  border-color: rgba(80, 197, 255, 0.28);
+  box-shadow: 0 40px 90px rgba(80, 197, 255, 0.12);
+}
+
+.project-card::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at top right, rgba(80, 197, 255, 0.1), transparent 32%);
+}
+
+.project-card h3{
+    margin: 0 0 0.8rem;
+  font-size: 1.1rem;
+}
+
+.project-card p{
+  margin: 0;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.project-card p{
+  font-family: var(--text-font);
+}
+
+.project-card h3{
+  font-family: var(--nabu);
+}
+
+.project-card a{
+  font-family: var(--text-font);
+}
+
+.project-card .project-action {
+  margin-top: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.project-card .project-action svg {
+  width: 16px;
+  height: 16px;
+}
