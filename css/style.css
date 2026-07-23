@@ -23,27 +23,27 @@
 
 @font-face {
   font-family: ptg;
-  src: url("/fonts/PTG\ Futurizm\ Font/");
+  src: url("fonts/PTG\ Futurizm\ Font/");
 }
 
 @font-face {
   font-family: nabulist;
-  src: url("/fonts/nabulist-font/");
+  src: url("fonts/nabulist-font/");
 }
 
 @font-face {
   font-family: michroma;
-  src: url("/fonts/Michroma/");
+  src: url("fonts/Michroma/");
 }
 
 @font-face {
   font-family: hanson;
-  src: url("/fonts/hanson-bold/");
+  src: url("fonts/hanson-bold/");
 }
 
 @font-face {
   font-family: pixel;
-  src: url("/fonts/pixelated-elegance-font/PixelatedEleganceRegular-ovawB.ttf");
+  src: url("fonts/pixelated-elegance-font/");
 }
 
 * {
