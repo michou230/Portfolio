@@ -166,13 +166,13 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function loadFooter(){
-  fetch("/footer.html").then(response => response.text()).then(data => {const footerrContainer = document.getElementById("footer-placeholder").innerHTML = data;
+  fetch("footer.html").then(response => response.text()).then(data => {const footerrContainer = document.getElementById("footer-placeholder").innerHTML = data;
   })
   .catch(error => console.error("Error loading footer:", error));
 }
 
 function loadHeader(){
-  fetch("/header.html").then(response => response.text()).then(data => {const headerContainer = document.getElementById("header-placeholder")
+  fetch("header.html").then(response => response.text()).then(data => {const headerContainer = document.getElementById("header-placeholder")
     if(headerContainer){
       headerContainer.innerHTML = data;
       setActivenav();
