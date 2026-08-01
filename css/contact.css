@@ -1,5 +1,6 @@
 .contact-card {
   position: relative;
+  min-width: 0;
   overflow: hidden;
   padding: 1.6rem;
   border-radius: 26px;
@@ -21,28 +22,28 @@
   inset: 0;
   pointer-events: none;
   background: radial-gradient(circle at top right, rgba(80, 197, 255, 0.1), transparent 32%);
+  border-radius: inherit;
+  overflow: hidden;
 }
 
 .contact-card {
   font-family: var(--text-font);
+  display: grid;
+  gap: 1rem;
 }
 
 .contact-card p {
   margin: 0;
   line-height: 1.7;
   color: var(--muted);
+  text-align: center;
 }
 
 
 .contact-grid {
   display: grid;
   gap: 1.25rem;
-  grid-template-columns: minmax(100px, 1fr) minmax(100px, 260px);
-}
-
-.contact-card {
-  display: grid;
-  gap: 1rem;
+  grid-template-columns: 1fr;
 }
 
 .contact-item {
@@ -62,4 +63,25 @@
 
 .contact-button {
   width: fit-content;
+  justify-self: center;
+  min-height: 0;
+  padding: 0 40px;
+  border-radius: 16px;
+  font-size: 1rem;
+}
+
+.contact-card {
+  min-width: 0;
+}
+
+.contact-card p,
+.contact-item strong {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+@media (min-width: 1000px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
