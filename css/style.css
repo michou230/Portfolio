@@ -422,11 +422,13 @@ footer {
   }
 
   .project-grid,
-  .skill-grid,
-  .social-grid {
+  .skill-grid{
     grid-template-columns: 1fr;
   }
 
+  .social-grid {
+    grid-template-columns: repeat(3, minmax(160px, 1fr));
+  }
   .contact-grid {
     grid-template-columns: 1fr;
   }
@@ -437,8 +439,15 @@ footer {
     font-size: clamp(2.7rem, 12vw, 3.6rem);
   }
 
+  .hero-actions {
+    margin-left:0;
+    justify-content:center;
+  }
+
   .eyebrow {
     font-size: 0.78rem;
+    margin-left:0;
+    justify-content:center;
   }
 
   .button,

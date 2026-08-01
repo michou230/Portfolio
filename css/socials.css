@@ -1,6 +1,7 @@
 .social-grid {
   display: grid;
   gap: 1.2rem;
+  grid-template-columns: 1fr;
 }
 
 .social-card{
@@ -37,10 +38,6 @@
   margin: 0;
   line-height: 1.7;
   color: var(--muted);
-}
-
-.social-grid {
-  grid-template-columns: repeat(3, minmax(160px, 1fr));
 }
 
 .social-card {
@@ -89,4 +86,10 @@
 
 .social-grid a:hover {
   text-shadow: 0 0 15px white;
+}
+
+@media (min-width: 761px) {
+    .social-grid {
+        grid-template-columns: repeat(3, minmax(160px, 1fr));
+    }
 }
