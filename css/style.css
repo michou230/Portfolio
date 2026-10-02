@@ -72,6 +72,10 @@ body::before {
   pointer-events: none;
 }
 
+main {
+  flex: 1;
+}
+
 #header-placeholder {
   min-height: 70px;
 }
